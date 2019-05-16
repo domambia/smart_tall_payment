@@ -110,7 +110,7 @@ def stk_push():
         data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
         if response:
             return jsonify(data)
-    return render_template("pay.html", form = form)
+    return "Payment Is here"
     
 
 
