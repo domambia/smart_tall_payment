@@ -107,9 +107,9 @@ def stk_push():
     		}
         response = requests.post(api_url, json = req, headers=headers)
         print (response.text)
-        data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
+        # data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
         if response:
-            return jsonify(data)
+            return "<p style = margin: auto 30px;> This is a test. Thank you.</p>"
     return "Payment Is here"
     
 
