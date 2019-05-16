@@ -1,0 +1,4 @@
+Droplet Name: ubuntu-s-1vcpu-1gb-fra1-01
+IP Address: 134.209.247.234
+Username: root
+Password: 3f1b96c2cfb5b684810a6d3f7e
