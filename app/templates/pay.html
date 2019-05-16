@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        body{
+            background-color:#D3D3D3;
+
+        }
+        .btn-success{
+            text-transform: uppercase;
+            border:none;
+        }
+        input, input:hover,input:active{
+            border:none;
+        }
+    	.box-container{
+            margin: 20px auto;
+            width: 40%;
+        }
+    </style>
+    <title>Smart Tall</title>
+</head>
+<body>
+
+	<div class="box-container">
+		<div class="container">
+            <p style="text-align:center; text-transform:uppercase;">Smart Toll Payment</p>
+            <form action="" method="POST">
+                {{form.hidden_tag()}}
+                <div class="form-group">
+                    {{form.phone.label}}
+                    {{form.phone(class = "form-control")}}
+                </div>
+                <div class="form-group">
+                    {{form.amount.label}}
+                    {{form.amount(class = "form-control")}}
+                </div>
+                <div class="form-group">
+                    {{form.submit(class = "btn btn-success form-control")}}
+                </div>
+            </form>
+        </div>
+		
+	</div>
+    
+    
+</body>
+</html>
