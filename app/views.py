@@ -5,7 +5,6 @@ import requests
 import base64
 from datetime import datetime 
 from pybase64 import b64encode
-from M2Crypto import RSA, X509
 from  app.forms import PayForm
 
 config  = Config()
