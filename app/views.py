@@ -67,11 +67,11 @@ def register_url():
     access_token  = auth.get_token()
     api_url = "http://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
     headers = {"Authorization": "Bearer %s" % access_token}
-    request = { "ShortCode": "600388",
+    req = { "ShortCode": "600388",
         "ResponseType": " ",
         "ConfirmationURL": config.confirmation_url,
         "ValidationURL": config.validate_url}
-    response = requests.post(api_url, json = request, headers=headers)
+    response = requests.post(api_url, json = req, headers=headers)
     print (response.text)
 
     return "Registered Url"
@@ -92,7 +92,7 @@ def stk_push():
     if user_data:
         phone_number  = user_data['content']['phone_number'] 
         amount        = user_data['content']['amount'] 
-        request = {
+        req = {
     		  "BusinessShortCode":"174379", 
               "Password": password, 
               "Timestamp": timestamp, 
@@ -105,7 +105,7 @@ def stk_push():
     		  "AccountReference": "Smart Toll",
     		  "TransactionDesc": " Please pay for your toll services."
     		}
-        response = requests.post(api_url, json = request, headers=headers)
+        response = requests.post(api_url, json = req, headers=headers)
         print (response.text)
         data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
         if response:
@@ -129,7 +129,7 @@ def stk_pay():
     if form.validate_on_submit():
         phone_number  = str(form.phone.data) 
         amount        = str(form.amount.data) 
-        request = {
+        req = {
     		  "BusinessShortCode":"174379", 
               "Password": password, 
               "Timestamp": timestamp, 
@@ -142,7 +142,7 @@ def stk_pay():
     		  "AccountReference": "Smart Toll",
     		  "TransactionDesc": " Please pay for your toll services."
     		}
-        response = requests.post(api_url, json = request, headers=headers)
+        response = requests.post(api_url, json = req, headers=headers)
         print (response.text)
         data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
         if response:
