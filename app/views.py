@@ -146,6 +146,6 @@ def stk_pay():
         print (response.text)
         data  = {'status_code': 200, 'content': {'amount_paid': amount}, 'message': 'Success'}
         if response:
-            return jsonify(data)
+            return "<p style = margin: auto 30px;> This is a test. Thank you.</p>"
     return render_template("pay.html", form = form)
     
