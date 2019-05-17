@@ -1,3 +1,4 @@
 data.txt
 __pycache__
-now.py 
+now.py
+mpesa/config.py
