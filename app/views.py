@@ -10,27 +10,6 @@ from  app.forms import PayForm
 config  = Config()
 
 
-
-# def password(shortcode, passkey, timestamp):
-#     timestamp   = str(timestamp)                                    
-#     # data = datetime.strptime(now,'%Y%m%d %H:%M:%S') 
-#     timestamp = str(timestamp).replace('-','')
-#     timestamp = timestamp.replace(':','') 
-#     timestamp  = timestamp.replace(' ', '')
-#     timestamp  = timestamp[slice(0,14,1)] 
-#     print(timestamp)
-#     password  = b64encode(bytes(shortcode + passkey + timestamp, 'utf-8'))
-#     data = {'password': password, 'timestamp': timestamp}
-#     return data 
-# def get_encrypted_password():
-#     with open(os.path.join(base_dir, 'cert.cer'), mode = 'r') as f:
-#         cert = X509.load_cert_string(f.read()) #reading the file content 
-#         #pub_key = X509.load_cert_string(f.read())
-#         pub_key = cert.get_pubkey()
-#         rsa_key = pub_key.get_rsa()
-#         cipher = rsa_key.public_encrypt(bytes('omambia','utf-8'), RSA.pkcs1_padding)
-#         return  b64encode(cipher)
-
 @app.route("/")
 def home():
     access_token  = auth.get_token()
@@ -59,7 +38,6 @@ def confirm():
     }
     print(data)
     return jsonify(response)
-
 
 
 @app.route('/register-url', methods  = ['GET', 'POST'])
@@ -112,7 +90,6 @@ def stk_push():
             return "<p style = margin: auto 30px;> This is a test. Thank you.</p>"
     return "Payment Is here"
     
-
 
 @app.route('/stk-pay/', methods  = ['GET', 'POST'])
 def stk_pay():
